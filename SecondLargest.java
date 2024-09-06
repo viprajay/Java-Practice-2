@@ -1,22 +1,29 @@
 
-import java.util.Collections;
-import java.util.Arrays;
+import java.util.*;
 
 class SecondLargest {
-    static void print2largest(Integer arr[], int arr_size) {
+
+    static void print2largest(Integer arr[]) {
         Arrays.sort(arr, Collections.reverseOrder());
-        for (int i = 1; i < arr_size; i++) {
+        // int start = 0, end = arr.length - 1;
+        // while (start < end) {
+        // int temp = arr[end];
+        // arr[end] = arr[start];
+        // arr[start] = temp;
+        // start++;
+        // end--;
+        // }
+
+        for (int i = 1; i < arr.length; i++) {
             if (arr[i] != arr[0]) {
-                System.out.printf("The second largest " + "element is %d\n", arr[i]);
+                System.out.print(arr[i]);
                 return;
             }
         }
-        System.out.printf("There is no second " + "largest element\n");
     }
 
     public static void main(String[] args) {
-        Integer arr[] = { 12, 35, 1, 10, 34, 1 };
-        int n = arr.length;
-        print2largest(arr, n);
+        Integer arr[] = { 1, 2, 3, 4, 5, 6 };
+        print2largest(arr);
     }
 }
